@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@400;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --navy: #1a2e52;
+  --navy-light: #2a4580;
+  --gold: #b8960c;
+  --gold-light: #d4a510;
+  --forest: #2d5a3d;
+  --cream: #f7f6f2;
+  --text-primary: #1a1a1a;
+  --text-secondary: #4a4a4a;
+  --text-muted: #767676;
+  --border: #e2dfd6;
+}
+
+@layer base {
+  html {
+    font-family: 'Noto Sans JP', sans-serif;
+    color: var(--text-primary);
+    -webkit-font-smoothing: antialiased;
+    scroll-behavior: smooth;
+  }
+
+  h1, h2, h3 {
+    font-family: 'Noto Serif JP', serif;
+    letter-spacing: 0.05em;
+  }
+
+  h4, h5, h6 {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-weight: 700;
+  }
+}
+
+@layer components {
+  /* ===== セクション見出し ===== */
+  .section-heading {
+    @apply text-2xl md:text-3xl font-serif font-semibold text-navy-700;
+    letter-spacing: 0.08em;
+  }
+
+  .section-subheading {
+    @apply text-sm text-navy-400 mt-1;
+    letter-spacing: 0.15em;
+    font-family: 'Noto Sans JP', sans-serif;
+  }
+
+  .section-divider {
+    @apply w-12 h-0.5 bg-gold-500 mt-3 mb-6;
+  }
+
+  /* ===== ボタン ===== */
+  .btn-primary {
+    @apply inline-flex items-center gap-2 px-6 py-3 bg-navy-700 text-white text-sm font-medium rounded
+      hover:bg-navy-800 transition-colors duration-200;
+    letter-spacing: 0.05em;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center gap-2 px-6 py-3 border border-navy-700 text-navy-700 text-sm font-medium rounded
+      hover:bg-navy-700 hover:text-white transition-colors duration-200;
+    letter-spacing: 0.05em;
+  }
+
+  .btn-gold {
+    @apply inline-flex items-center gap-2 px-6 py-3 bg-gold-500 text-white text-sm font-medium rounded
+      hover:bg-gold-600 transition-colors duration-200;
+    letter-spacing: 0.05em;
+  }
+
+  .btn-outline-white {
+    @apply inline-flex items-center gap-2 px-6 py-3 border border-white text-white text-sm font-medium rounded
+      hover:bg-white hover:text-navy-700 transition-colors duration-200;
+    letter-spacing: 0.05em;
+  }
+
+  /* ===== カード ===== */
+  .card {
+    @apply bg-white rounded border border-stone-100 shadow-card hover:shadow-card-hover transition-shadow duration-300;
+  }
+
+  /* ===== ニュースカテゴリバッジ ===== */
+  .badge-総会 { @apply bg-navy-700 text-white; }
+  .badge-支部会 { @apply bg-forest-500 text-white; }
+  .badge-同期会 { @apply bg-gold-500 text-white; }
+  .badge-クラブOB会 { @apply bg-purple-600 text-white; }
+  .badge-お知らせ { @apply bg-stone-600 text-white; }
+  .badge-会報 { @apply bg-amber-700 text-white; }
+  .badge-母校支援 { @apply bg-teal-700 text-white; }
+  .badge-卒業生 { @apply bg-blue-700 text-white; }
+  .badge-慶弔 { @apply bg-stone-400 text-white; }
+
+  /* ===== パンくず ===== */
+  .breadcrumb {
+    @apply flex items-center gap-2 text-xs text-stone-400;
+  }
+
+  .breadcrumb a {
+    @apply hover:text-navy-700 transition-colors;
+  }
+
+  /* ===== フォーム ===== */
+  .form-label {
+    @apply block text-sm font-medium text-stone-700 mb-1;
+  }
+
+  .form-input {
+    @apply w-full px-4 py-2.5 border border-stone-200 rounded text-sm
+      focus:outline-none focus:ring-2 focus:ring-navy-400 focus:border-transparent
+      transition-shadow duration-200;
+  }
+
+  .form-textarea {
+    @apply form-input resize-y min-h-[120px];
+  }
+
+  .form-select {
+    @apply form-input appearance-none bg-white cursor-pointer;
+  }
+
+  .required-mark {
+    @apply inline-block ml-1 text-red-600 text-xs;
+  }
+}
+
+/* ===== ヒーロー装飾 ===== */
+.hero-pattern {
+  background-color: var(--navy);
+  background-image:
+    radial-gradient(circle at 20% 50%, rgba(184, 150, 12, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(45, 90, 61, 0.12) 0%, transparent 45%);
+}
+
+/* ===== アニメーション ===== */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.5s ease-out both;
+}
+
+.animate-delay-100 { animation-delay: 0.1s; }
+.animate-delay-200 { animation-delay: 0.2s; }
+.animate-delay-300 { animation-delay: 0.3s; }
+
+/* ===== スクロールバー ===== */
+@media (min-width: 768px) {
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: #f5f5f0; }
+  ::-webkit-scrollbar-thumb { background: #c5bfb0; border-radius: 3px; }
+}
