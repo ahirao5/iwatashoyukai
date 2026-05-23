@@ -52,7 +52,7 @@ export const siteConfig = {
   // --------------------------------------------------
   // 学校公式サイト・関連URL
   // --------------------------------------------------
-  schoolUrl: "https://www.iwata.ed.jp",  // ← 要確認
+  schoolUrl: "https://www.iwata.ed.jp"
 
   // --------------------------------------------------
   // 会費情報（会則第10条より）
@@ -77,7 +77,7 @@ export const siteConfig = {
   // --------------------------------------------------
   social: {
     x: "",          // ← 例: "https://twitter.com/shoyukai_iwata"
-    facebook: "",   // ← 例: "https://www.facebook.com/shoyukai.iwata"
+    facebook: "https://www.facebook.com/syoyukai/?locale=ja_JP"
     instagram: "",  // ← 任意
   },
 
@@ -86,7 +86,7 @@ export const siteConfig = {
   // --------------------------------------------------
   directory: {
     currentEdition: 7,
-    publishedYear: 2024,
+    publishedYear: 2025,
     priceNote: "有料（詳細は事務局へお問い合わせください）",
   },
 } as const;
